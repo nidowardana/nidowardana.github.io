@@ -16,7 +16,12 @@
   <div>
     <figure>
       <img src="/img/rotatecat.gif" height="200" width="200">
-	  <figcaption>Source: https://www.instagram.com/bugthecardboardcat/ via GIPHY</figcaption>
+	  <figcaption>
+	    <details>
+		  <summary>source</summary>
+		  <p>https://www.instagram.com/bugthecardboardcat/ via GIPHY</p>
+		</details>
+      </figcaption>
     </figure>
 	<p>We are still building the page.</p>
   </div>
