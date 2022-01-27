@@ -3,10 +3,11 @@ body {
 }
 
 nav {
+	padding: 25px 0px 25px 0px;
 	background-color: LightSteelBlue;
 }
 
-.loadImg {
+.imgLoad {
 	border-radius: 100px 100px 100px 100px;
 	height: 200px;
 	width: 200px;
