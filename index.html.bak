@@ -3,17 +3,27 @@
 <head>
   <title>Nido Wardana</title>
 </head>
-
-<nav>
-	<a href="/index.html">Home</a>
-	<a>About</a>
-</nav>
-
 <body>
+  <nav>
+    <a href="/index.html">Home</a>
+    <a>About</a>
+  </nav>
+
+  <header>
+    <h1>Hello World!</h1>
+  </header> 
+
   <div>
-	<h1>Hello World!</h1>
-	<img src="/img/rotatecat.gif" height="200" width="200">
+    <figure>
+      <img src="/img/rotatecat.gif" height="200" width="200">
+	  <figcaption>Source: https://www.instagram.com/bugthecardboardcat/ via GIPHY</figcaption>
+    </figure>
+	<p>We are still building the page.</p>
   </div>
+  
+  <footer>
+    <p><i>Developed by Nido Wardana</i></p>
+  </footer>
 </body>
 
 </html>
