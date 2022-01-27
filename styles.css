@@ -5,3 +5,9 @@ body {
 nav {
 	background-color: LightSteelBlue;
 }
+
+.loadImg {
+	height: 200px;
+	widht: 200px;
+	border-radius: 100px 100px 100px 100px;
+}
