@@ -38,9 +38,9 @@
 	</div>  
   </div>
 
-  <div class="container">
-    <h2 class="item">My current projects</h2>
-	<p class="item">More info is coming soon</p>
+  <div>
+    <h2>My current projects</h2>
+	<p>More info is coming soon</p>
   </div>
   
   <footer>
