@@ -6,10 +6,13 @@ body {
 
 h1 {
 	color: #023047;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-weight: bold;
 }
 
 h2 {
 	color: #ffb703;
+	font-family: 'Trebuchet MS', sans-serif;
 }
 
 div {
