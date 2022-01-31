@@ -41,7 +41,7 @@ body {
 }
 
 .summaryme {
-	flex: 2 0 500px;
+	flex: 2 1 500px;
 }
 
 footer {
