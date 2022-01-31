@@ -1,14 +1,50 @@
 body {
 	background-color: LightSlateGray;
+	color: MintCream;
 }
 
-nav {
-	padding: 25px 0px 25px 0px;
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 	background-color: LightSteelBlue;
+	position: sticky;
+	top: 0;
+	width: 100%;
 }
 
-.imgLoad {
+.navli {
+	display: inline;
+	padding: 75px 0 75px 0;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	align-content: space-around;
+}
+
+.item {
+	padding: 10px 10px 10px 10px;
+}
+
+.imgload {
 	border-radius: 100px 100px 100px 100px;
 	height: 200px;
 	width: 200px;
+	
+}
+
+.profile {
+	flex: 1 1 auto;
+}
+
+.summaryme {
+	flex: 2 0 500px;
+}
+
+footer {
+	text-align: center;
+	font-size: 10px;
 }
