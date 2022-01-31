@@ -1,6 +1,18 @@
 body {
-	background-color: LightSlateGray;
-	color: MintCream;
+	background-color: #8ecae6;
+	color: #f1faee;
+}
+
+h1 {
+	color: #023047;
+}
+
+h2 {
+	color: #ffb703;
+}
+
+div {
+	background-color: #219ebc;
 }
 
 .navbar {
@@ -8,7 +20,7 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: LightSteelBlue;
+	background-color: #219ebc;
 	position: sticky;
 	top: 0;
 	width: 100%;
@@ -23,6 +35,7 @@ body {
 .container {
 	display: flex;
 	align-content: space-around;
+	margin: 10px 0 10px 0;
 }
 
 .item {
@@ -37,10 +50,12 @@ body {
 }
 
 .profile {
+	background-color: #023047;
 	flex: 1 1 auto;
 }
 
 .summaryme {
+	background-color: #219ebc;
 	flex: 2 1 500px;
 }
 
