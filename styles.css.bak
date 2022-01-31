@@ -47,7 +47,7 @@ div {
 }
 
 .profpic {
-	border-radius: 100px 100px 100px 100px;
+	border-radius: 50%;
 	height: 200px;
 	width: 200px;
 	
@@ -56,6 +56,7 @@ div {
 .profile {
 	background-color: #023047;
 	flex: 1 1 auto;
+	text-align: center;
 }
 
 .summaryme {

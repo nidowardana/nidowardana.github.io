@@ -19,6 +19,10 @@ div {
 	background-color: #219ebc;
 }
 
+figure {
+	justify-content: center;
+}
+
 .navbar {
 	list-style-type: none;
 	margin: 0;
@@ -56,6 +60,7 @@ div {
 .profile {
 	background-color: #023047;
 	flex: 1 1 auto;
+	text-align: center;
 }
 
 .summaryme {
