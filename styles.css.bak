@@ -19,10 +19,30 @@ div {
 	background-color: #219ebc;
 }
 
+figure {
+	justify-content: center;
+}
+
+a:link {
+	color: #f1faee;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #ffb703;
+}
+
+a:active {
+	color: #ffb703;
+	text-decoration: underline;
+}
+
+
+
 .navbar {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+	padding: 5px 0px 5px 10px;
 	overflow: hidden;
 	background-color: #219ebc;
 	position: sticky;
@@ -32,7 +52,7 @@ div {
 
 .navli {
 	display: inline;
-	padding: 75px 0 75px 0;
+	padding: 75px 5px 75px 0;
 	text-align: center;
 }
 
