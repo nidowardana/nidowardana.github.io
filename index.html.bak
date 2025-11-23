@@ -1,53 +1,90 @@
 <!doctype html>
 <html>
+<!-- This is the head of the page -->
 <head>
   <title>Nido Wardana</title>
   <link rel="icon" href="/img/favicon_nw.png">
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<button id="theme-toggle" class="btn" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  const apply = (t) => {
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('theme', t);
+    btn.textContent = t === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    btn.setAttribute('aria-pressed', t === 'dark');
+  };
+  const saved = localStorage.getItem('theme');
+  if (saved) apply(saved);
+  else apply(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    apply(current === 'dark' ? 'light' : 'dark');
+  });
+</script>
+
+<!-- This is the body of the page -->
 <body>
+  <!-- Navigation bar -->
   <nav>
     <ul class="navbar">
 	  <li class="navli"><a href="/index.html">Home</a></li>
 	  <li class="navli"><a>Publications</a></li>
-	  <li class="navli"><a>Projects</a></li>
-	  <li class="navli"><a>Courses</a></li>
+	  <li class="navli"><a>Social Project</a></li>
+	  <li class="navli"><a>CV</a></li>
 	  
 	</ul>
   </nav>
 
+  <!-- Header -->
   <header>
     <h1>Nido D. Wardana</h1>
   </header> 
-
+  
+  <!-- Main Content -->
   <div class="container">
     <div class="item profile">
 	  <figure>
-        <img class="profpic" src="/img/rotatecat.gif" alt="the loading cat">
-	    <figcaption>
-	      <details>
-		    <summary>source</summary>
-		    <p><small>https://www.instagram.com/bugthecardboardcat/ via GIPHY</small></p>
-		  </details>
-        </figcaption>
+        <img class="profpic" src="/img/2025_nw_pp.jpg" alt="Nido">
       </figure>
-	  <p>Early-Career Lecturer and Researcher</p>
-	  <p><small>We are still building the page.</small></p>
+	  <p>An Aspiring Cognitive Neuroscientist</p>
+	  <div class="social-icons">
+		<a href="https://scholar.google.com/citations?user=ddLLsW0AAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+			<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar">
+		</a>
+		<a href="https://linkedin.com/en/nido-d-wardana-289049130/" target="_blank" aria-label="LinkedIn">
+			<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+		</a>
+		<a href="https://www.researchgate.net/profile/Nido-Wardana" target="_blank" aria-label="ResearchGate">
+			<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
+		</a>
+	  </div>
 	</div>
 	
 	<div class="item summaryme">
 	  <h2>About me</h2>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	  <p>I am a PhD researcher at the <a href="https://umcgresearch.org/w/n-d-wardana">University Medical Center Groningen</a>. My project revolves around cognitive decline in the aging population and combines various neuroimaging techniques, including electroencephalography (EEG), magnetic resonance imaging (MRI), and functional near-infrared spectroscopy (fNIRS). It also involves the use of transcranial alternating current stimulation (tACS) to improve cognition in older adults.</p>
+	  <p>In Indonesia, I work at the <a href="https://psikologi.unair.ac.id/en_US/lecturer-nido-dipo-wardana-s-psi-m-sc/">Faculty of Pscyhology of Universitas Airlangga</a> as a junior lecturer. In this capacity, I teach Biopsychology of Behavior, Forensic Psychology, and Quantitative Research Methods and Analysis.</p>
 	</div>  
   </div>
 
   <div>
-    <h2>My current projects</h2>
-	<p>More info is coming soon</p>
+    <h2>Current Project(s)</h2>
+	<details class="proj">
+	  <summary class="respro">COGMAX: tACS for Older Adults with Amnestic Mild Cognitive Impairment</summary>
+	  <p><b>Year:</b> Ongoing<br><b>Supervisors:</b> Branislava Ćurčić-Blake, PhD & Stefanie Enriquez-Geppert, PhD<br><b>PhD Colleague:</b> Zhenyu Zhang<br></p>
+	</details>
+	<details class="proj">
+	  <summary class="respro">AgeLing: Cognitive and Linguistic Functioning in Subjective Cognitive Decline.</summary>
+	  <p><b>Year:</b> Ongoing<br><b>Supervisors:</b> Branislava Ćurčić-Blake, PhD & Stefanie Enriquez-Geppert, PhD<br><b>PhD Colleague:</b> Teodora Lazić<br></p>
+	</details>
   </div>
-  
+   <!-- Footer -->
   <footer>
-    <p><i>Developed by Nido Wardana</i></p>
+    <p>Developed by Nido Wardana.</p>
   </footer>
 </body>
 

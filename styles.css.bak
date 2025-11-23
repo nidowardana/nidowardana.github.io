@@ -1,95 +1,218 @@
-body {
-	margin: 0;
-	background-color: #8ecae6;
-	color: #f1faee;
-	font-family: 'Trebuchet MS', sans-serif;
+/*
+  Nido Wardana — GitHub Pages stylesheet (muted & professional)
+  ------------------------------------------------------------
+*/
+
+/* 1) CSS Reset / Base ----------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height: 1.6; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* 2) Design Tokens -------------------------------------------------------- */
+:root {
+  color-scheme: light dark;
+  --transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-p, h1, h2 {
-	padding: 0 5px 0 5px;
+:root[data-theme="light"] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #1f2937;      /* slate-800 */
+  --muted: #6b7280;     /* gray-500 */
+  --border: #e5e7eb;    /* gray-200 */
+  --accent: #3a6ea5;    /* muted indigo-blue */
+  --accent-contrast: #ffffff;
+  --link: #1e40af;      /* deep link blue */
+  --link-hover: #16347f;
+  --chip: #eef2f7;
+  --focus: #94a3b8;     /* subtle focus ring */
+  --shadow: 0 8px 24px rgba(0,0,0,.08);
+  --radius: 14px;
+
+  --fs-1: clamp(2rem, 1.6rem + 1vw, 2.6rem);
+  --fs-2: clamp(1.25rem, 1.1rem + .5vw, 1.6rem);
+  --fs-3: 1.125rem;
+  --fs-4: 0.95rem;
+
+  --space-1: 6px;  --space-2: 10px; --space-3: 16px; --space-4: 24px; --space-5: 36px; --space-6: 56px;
+  --container: 1000px;
 }
 
-h1 {
-	color: #023047;
-	font-family: 'Trebuchet MS', sans-serif;
-	font-weight: bold;
+:root[data-theme="dark"] {
+  --bg: #0f172a;        /* slate-900 */
+  --surface: #0b1220;   /* near-navy */
+  --text: #e5e7eb;      /* gray-200 */
+  --muted: #a1a1aa;     /* zinc-400 */
+  --border: #1f2842;
+  --accent: #6b87ac;    /* softened blue */
+  --accent-contrast: #0b1220;
+  --link: #93b1df;
+  --link-hover: #b7c7e6;
+  --chip: #111b2e;
+  --focus: #7c93b6;
+  --shadow: 0 12px 28px rgba(0,0,0,.45);
+  --radius: 14px;
+
+  --fs-1: clamp(2rem, 1.6rem + 1vw, 2.6rem);
+  --fs-2: clamp(1.25rem, 1.1rem + .5vw, 1.6rem);
+  --fs-3: 1.125rem;
+  --fs-4: 0.95rem;
+
+  --space-1: 6px;  --space-2: 10px; --space-3: 16px; --space-4: 24px; --space-5: 36px; --space-6: 56px;
+  --container: 1000px;
 }
 
-h2 {
-	color: #ffb703;
-	font-family: 'Trebuchet MS', sans-serif;
+/* 3) Page basics ---------------------------------------------------------- */
+body { background: var(--bg); color: var(--text); }
+.wrapper { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+
+p { margin: 0 0 var(--space-3); font-size: var(--fs-3); color: var(--text); }
+small { color: var(--muted); }
+
+h1, h2 { margin: 0 0 var(--space-2); line-height: 1.2; }
+h1 { font-weight: 800; font-size: var(--fs-1); letter-spacing: -0.02em; }
+h2 { font-weight: 700; font-size: var(--fs-2); color: var(--text); }
+
+/* Keep light, accessible accents for headings where desired */
+.respro { color: var(--accent); }
+
+/* 4) Links ---------------------------------------------------------------- */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:active { color: var(--link-hover); }
+
+/* 5) Navigation ----------------------------------------------------------- */
+.navbar { position: sticky; top: 0; left: 0; z-index: 10; margin: 0; padding: var(--space-2) var(--space-3); background: color-mix(in oklab, var(--surface), transparent 0%); backdrop-filter: saturate(140%) blur(6px); border-bottom: 1px solid var(--border); list-style: none; }
+
+/* If you use <li> items inside .navbar */
+.navli { display: inline-block; margin-right: var(--space-3); padding: var(--space-2) 0; }
+.navli a { padding: 8px 10px; border-radius: 10px; }
+.navli a:hover { background: var(--chip); text-decoration: none; }
+
+/* 6) Layout blocks -------------------------------------------------------- */
+/* Avoid styling all divs globally (was causing heavy backgrounds). */
+.section { padding: var(--space-5) 0; }
+.surface { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.container { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: stretch; margin: var(--space-3) 0; }
+.item { flex: 1 1 260px; padding: var(--space-3); }
+
+/* Card pattern */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-3); box-shadow: var(--shadow); }
+.card h3 { margin: 0 0 var(--space-2); font-size: 1.05rem; }
+.card p { color: var(--muted); }
+
+/* Two-column profile layout (keeps your existing class names) */
+.profile { flex: 1 1 260px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); box-shadow: var(--shadow); }
+.summaryme { flex: 2 1 480px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); box-shadow: var(--shadow); }
+
+/* Images ----------------------------------------------------------------- */
+.profpic { border-radius: 999px; height: 180px; width: 180px; object-fit: cover; margin: 0 auto var(--space-3); border: 3px solid color-mix(in oklab, var(--border), transparent 40%); }
+figure { margin: 0; display: grid; place-items: center; }
+
+/* Utilities --------------------------------------------------------------- */
+.muted { color: var(--muted); }
+
+/* Projects (details/summary) ---------------------------------------------- */
+.proj {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 2px);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-2) 0;  /* reduced spacing */
+  box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
 }
-
-div {
-	background-color: #219ebc;
+.proj > summary.respro {
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 1.1rem; /* slightly larger heading */
+  color: var(--accent);
+  list-style: none; /* remove default big triangle spacing in some browsers */
 }
-
-figure {
-	justify-content: center;
+.proj > summary.respro::-webkit-details-marker { display: none; }
+.proj > summary.respro::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 10px;
+  transform: translateY(-1px);
+  transition: transform .2s ease;
+  color: var(--muted);
 }
-
-a:link {
-	color: #f1faee;
-	text-decoration: underline;
+.proj[open] > summary.respro::before { transform: rotate(90deg) translateY(-1px); }
+.proj p {
+  margin-top: var(--space-2);
+  font-size: var(--fs-4);  /* smaller body text */
+  color: var(--muted);
 }
+.proj p b { color: var(--text); font-weight: 600; }
 
-a:hover {
-	color: #ffb703;
-}
+.center { text-align: center; }
+.stack > * + * { margin-top: var(--space-3); }
+.grid { display: grid; gap: var(--space-3); }
+@media (min-width: 700px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } }
+.center { text-align: center; }
+.stack > * + * { margin-top: var(--space-3); }
+.grid { display: grid; gap: var(--space-3); }
+@media (min-width: 700px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } }
 
-a:active {
-	color: #ffb703;
-	text-decoration: underline;
-}
+/* Buttons ---------------------------------------------------------------- */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; box-shadow: var(--shadow); transition: transform .06s ease; }
+.btn:hover { background: var(--chip); text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--accent); color: var(--accent-contrast); border-color: transparent; }
+.btn.primary:hover { filter: brightness(0.98); }
 
+/* Theme toggle button ----------------------------------------------------- */
+#theme-toggle { position: fixed; bottom: 20px; right: 20px; background: var(--surface); color: var(--text); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 999px; padding: 10px 16px; cursor: pointer; z-index: 100; transition: var(--transition); }
+#theme-toggle:hover { background: var(--chip); }
 
-
-.navbar {
-	list-style-type: none;
-	padding: 10px 0px 10px 10px;
-	overflow: hidden;
-	background-color: #219ebc;
-	position: sticky;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-.navli {
-	display: inline;
-	padding: 75px 5px 75px 0;
-	text-align: center;
-}
-
-.container {
-	display: flex;
-	align-content: space-around;
-	margin: 10px 0 10px 0;
-}
-
-.item {
-	padding: 10px 10px 10px 10px;
-}
-
-.profpic {
-	border-radius: 50%;
-	height: 200px;
-	width: 200px;
-	
-}
-
-.profile {
-	background-color: #023047;
-	flex: 1 1 auto;
-	text-align: center;
-}
-
-.summaryme {
-	background-color: #219ebc;
-	flex: 2 1 500px;
-}
-
+/* Footer ----------------------------------------------------------------- */
 footer {
-	text-align: center;
-	font-size: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding: var(--space-3) 0;
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  background: transparent;
+}
+
+/* Accessibility & Motion preferences ------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Example helpers to space your page sections ---------------------------- */
+.header-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.hero { padding: var(--space-6) 0 var(--space-4); }
+
+/* Social icons ---------------------------- */
+.social-icons {
+  display: flex;
+  justify-content: center;   /* <-- centers horizontally */
+  gap: 16px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+  filter: invert(40%) sepia(5%) saturate(300%) hue-rotate(180deg) brightness(90%);
+}
+
+[data-theme="dark"] .social-icons img {
+  filter: invert(85%) brightness(140%);
+}
+
+.social-icons img:hover {
+  opacity: 1;
 }
