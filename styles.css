@@ -105,7 +105,7 @@ a:active { color: var(--link-hover); }
 .card h3 { margin: 0 0 var(--space-2); font-size: 1.05rem; }
 .card p { color: var(--muted); }
 
-/* Two-column profile layout (keeps your existing class names) */
+/* Two-column profile layout */
 .profile { flex: 1 1 260px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); box-shadow: var(--shadow); }
 .summaryme { flex: 2 1 480px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); box-shadow: var(--shadow); }
 
@@ -129,9 +129,9 @@ figure { margin: 0; display: grid; place-items: center; }
 .proj > summary.respro {
   cursor: pointer;
   font-weight: 650;
-  font-size: 1.1rem; /* slightly larger heading */
+  font-size: 1.1rem;
   color: var(--accent);
-  list-style: none; /* remove default big triangle spacing in some browsers */
+  list-style: none;
 }
 .proj > summary.respro::-webkit-details-marker { display: none; }
 .proj > summary.respro::before {
@@ -145,7 +145,7 @@ figure { margin: 0; display: grid; place-items: center; }
 .proj[open] > summary.respro::before { transform: rotate(90deg) translateY(-1px); }
 .proj p {
   margin-top: var(--space-2);
-  font-size: var(--fs-4);  /* smaller body text */
+  font-size: var(--fs-4);
   color: var(--muted);
 }
 .proj p b { color: var(--text); font-weight: 600; }
@@ -188,14 +188,14 @@ footer {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
-/* Example helpers to space your page sections ---------------------------- */
+/* Example helpers to space page sections ---------------------------- */
 .header-bar { background: var(--surface); border-bottom: 1px solid var(--border); }
 .hero { padding: var(--space-6) 0 var(--space-4); }
 
 /* Social icons ---------------------------- */
 .social-icons {
   display: flex;
-  justify-content: center;   /* <-- centers horizontally */
+  justify-content: center;
   gap: 16px;
   margin-top: 6px;
   align-items: center;
